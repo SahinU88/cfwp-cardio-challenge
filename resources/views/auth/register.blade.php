@@ -18,6 +18,8 @@
                         <form action="{{ route('register') }}" method="POST" class="space-y-6">
                             @csrf
 
+                            <x-honey/>
+
                             <div>
                                 <x-label for="name" class="block text-sm font-medium text-gray-700" :value="__('Name')" />
                                 <div class="mt-1">
