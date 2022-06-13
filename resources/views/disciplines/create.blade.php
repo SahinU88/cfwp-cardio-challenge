@@ -33,6 +33,9 @@
                 <div class="p-6">
                     @include('disciplines.add-handstandwalk')
                 </div>
+                <div class="p-6">
+                    @include('disciplines.add-doubleunders')
+                </div>
             </div>
         </div>
     </div>

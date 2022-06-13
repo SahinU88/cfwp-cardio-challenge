@@ -37,3 +37,11 @@
     </div>
 </div>
 @endif
+
+@if (session('doubleUnders'))
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-notification :type="'doubleUnders'" :distance="session('doubleUnders')->distance" :points="session('doubleUnders')->points" />
+    </div>
+</div>
+@endif
