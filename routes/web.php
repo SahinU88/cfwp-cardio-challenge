@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DisciplineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,25 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    if (auth()->check()) {
-        Auth::logout();
-        return redirect('/welcome');
-    }
-
-    return view('auth.register');
-});
-
-Route::get('/welcome', function () {
-    return view('welcome');
-})->middleware(['auth'])->name('welcome');
-
-Route::fallback(function () {
-    return redirect('/');
-});
-
-/* Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard'); */
-
 require __DIR__.'/auth.php';
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard');
+
+    Route::get('/add-entry', fn() => view('disciplines.create'))->name('disciplines.create');
+    Route::post('/disciplines/{type}', [DisciplineController::class, 'store'])->name('disciplines.store');
+});
