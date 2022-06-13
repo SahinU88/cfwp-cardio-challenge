@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Discipline\SkiErg;
 use App\Models\Discipline\Swimming;
 use App\Models\Discipline\Walking;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,7 @@ class DisciplineController extends Controller
                 'handStandWalk',
                 'doubleUnders',
                 'rowing',
-                'skiErg',
+                SkiErg::class,
                 Swimming::class,
                 Walking::class,
             ]

@@ -24,6 +24,9 @@
                 <div class="p-6">
                     @include('disciplines.add-swimming')
                 </div>
+                <div class="p-6">
+                    @include('disciplines.add-skierg')
+                </div>
             </div>
         </div>
     </div>

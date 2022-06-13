@@ -13,3 +13,11 @@
     </div>
 </div>
 @endif
+
+@if (session('skiErg'))
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-notification :type="'skiErg'" :distance="session('skiErg')->distance" :points="session('skiErg')->points" />
+    </div>
+</div>
+@endif
