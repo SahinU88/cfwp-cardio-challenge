@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -50,5 +51,83 @@ class User extends Authenticatable
     public function disciplines()
     {
         return $this->hasMany(Discipline::class);
+    }
+
+    public function getTotalDistanceFactorizedAttribute()
+    {
+        $sum = $this->disciplines->sum('points');
+
+        return $sum / 1000;
+    }
+
+    public function getCurrentWeekDistanceFactorizedAttribute()
+    {
+        $sum = $this->disciplines
+            ->whereBetween(
+                'created_at',
+                [
+                    Carbon::now()->startOfWeek(),
+                    Carbon::now()->endOfWeek()
+                ]
+            )
+            ->sum('points');
+
+        return $sum / 1000;
+    }
+
+    public function getTotalWalkingForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('Walking');
+    }
+
+    public function getTotalSkiErgForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('SkiErg');
+    }
+
+    public function getTotalBikingForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('Biking');
+    }
+
+    public function getTotalRowingForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('Rowing');
+    }
+
+    public function getTotalSwimmingForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('Swimming');
+    }
+
+    public function getTotalDoubleUndersForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('DoubleUnders');
+    }
+
+    public function getTotalHandstandWalkForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('HandStandWalk');
+    }
+
+    public function getTotalBurpeesForWeek()
+    {
+        return $this->getCurrentWeekTotalPointsForType('Burpees');
+    }
+
+    public function getCurrentWeekTotalPointsForType($type)
+    {
+        $sum = $this->disciplines
+            ->where('name', '=', $type)
+            ->whereBetween(
+                'created_at',
+                [
+                    Carbon::now()->startOfWeek(),
+                    Carbon::now()->endOfWeek()
+                ]
+            )
+            ->sum('points');
+
+        return number_format($sum / 1000, 2, ',', '.');
     }
 }

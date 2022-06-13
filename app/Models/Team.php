@@ -15,4 +15,22 @@ class Team extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function getTotal()
+    {
+        return $this->users
+            ->map(function($user){
+                return $user->getTotalDistanceFactorizedAttribute();
+            })
+            ->sum();
+    }
+
+    public function getTotalCurrentWeek()
+    {
+        return $this->users
+            ->map(function($user){
+                return $user->getCurrentWeekDistanceFactorizedAttribute();
+            })
+            ->sum();
+    }
 }

@@ -19,15 +19,19 @@
                             <tr>
                                 <th class="w-10 py-3.5 pl-4 pr-1"></th>
                                 <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Team</th>
-                                <th class="px-3 py-3.5 text-right text-sm font-semibold text-gray-900">Points</th>
+                                <th class="px-3 py-3.5 text-right text-sm font-semibold text-gray-900">Total kilometers</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
-                            <tr>
-                                <td class="w-10 whitespace-nowrap py-4 pl-4 pr-1 text-center text-sm font-medium text-gray-900">1</td>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lindsay Walton</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-500">2444,00</td>
+                            @foreach ($teams as $team)
+                            <tr
+                                @class(['bg-cfwp-yellow font-bold' => Auth::user()->team->id == $team->id])
+                            >
+                                <td class="w-10 whitespace-nowrap py-4 pl-4 pr-1 text-center text-sm font-medium text-gray-900">{{ $loop->iteration }}</td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $team->name }}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($team->getTotalCurrentWeek(), 2, ',', '.') }}</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
