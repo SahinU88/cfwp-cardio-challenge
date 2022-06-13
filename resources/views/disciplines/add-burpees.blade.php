@@ -2,15 +2,15 @@
     <div class="md:grid md:grid-cols-3 md:gap-6">
         <div class="md:col-span-1">
             <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Double Unders</h3>
+                <h3 class="text-lg font-medium leading-6 text-gray-900">Burpees</h3>
                 <ul class="list-disc mt-1 ml-4 text-sm leading-5 text-gray-600 italic">
-                    <li>Minimum repetition for a single session: 500reps</li>
-                    <li>Conversion: 250reps = 1km</li>
+                    <li>Minimum repetition for a single session: 300reps</li>
+                    <li>Conversion: 150reps = 1km</li>
                 </ul>
             </div>
         </div>
         <div class="mt-5 md:mt-0 md:col-span-2">
-            <form action="{{ route('disciplines.store', 'doubleUnders') }}" method="POST">
+            <form action="{{ route('disciplines.store', 'burpees') }}" method="POST">
                 @csrf
                 <div class="shadow sm:rounded-md sm:overflow-hidden">
                     <div class="px-4 py-5 bg-white sm:p-6">
@@ -24,9 +24,9 @@
                                         id="repetition"
                                         name="repetition"
                                         type="number"
-                                        min="500"
+                                        min="300"
                                         step="1"
-                                        placeholder="500"
+                                        placeholder="300"
                                         required
                                         class="form-input block w-full pl-4 pr-12 sm:text-sm sm:leading-5"
                                     />
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
 
-                                @error('repetition', 'doubleUnders')
+                                @error('repetition', 'burpees')
                                 <p class="mt-3 text-red-500">{{ $message }}</p>
                                 @enderror
                             </div>

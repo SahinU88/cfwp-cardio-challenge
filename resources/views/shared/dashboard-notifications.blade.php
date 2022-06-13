@@ -45,3 +45,19 @@
     </div>
 </div>
 @endif
+
+@if (session('burpees'))
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-notification :type="'burpees'" :distance="session('burpees')->distance" :points="session('burpees')->points" />
+    </div>
+</div>
+@endif
+
+@if (session('biking'))
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-notification :type="'biking'" :distance="session('biking')->distance" :points="session('biking')->points" />
+    </div>
+</div>
+@endif

@@ -22,6 +22,9 @@
                     @include('disciplines.add-walking')
                 </div>
                 <div class="p-6">
+                    @include('disciplines.add-biking')
+                </div>
+                <div class="p-6">
                     @include('disciplines.add-swimming')
                 </div>
                 <div class="p-6">
@@ -35,6 +38,9 @@
                 </div>
                 <div class="p-6">
                     @include('disciplines.add-doubleunders')
+                </div>
+                <div class="p-6">
+                    @include('disciplines.add-burpees')
                 </div>
             </div>
         </div>

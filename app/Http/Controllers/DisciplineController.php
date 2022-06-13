@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Discipline\Biking;
+use App\Models\Discipline\Burpees;
 use App\Models\Discipline\DoubleUnders;
 use App\Models\Discipline\HandstandWalk;
 use App\Models\Discipline\Rowing;
@@ -37,8 +39,8 @@ class DisciplineController extends Controller
         return in_array(
             $type,
             [
-                'biking',
-                'burpees',
+                Biking::class,
+                Burpees::class,
                 HandstandWalk::class,
                 DoubleUnders::class,
                 Rowing::class,

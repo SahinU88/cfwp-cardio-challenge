@@ -4,7 +4,7 @@ namespace App\Models\Discipline;
 
 use App\Models\Discipline;
 
-class DoubleUnders extends Discipline
+class Burpees extends Discipline
 {
     /**
      * The table associated with the model.
@@ -19,14 +19,14 @@ class DoubleUnders extends Discipline
      * @var array
      */
     protected $attributes = [
-        'name' => 'DoubleUnders',
+        'name' => 'Burpees',
     ];
 
     public function __construct($attributes = [])
     {
         $this->hasRepetition = true;
-        $this->minimalRepetitionToReach = 500;
-        $this->repetitionToDistanceConversionBase = 250;
+        $this->minimalRepetitionToReach = 300;
+        $this->repetitionToDistanceConversionBase = 150;
 
         parent::__construct($attributes);
     }
