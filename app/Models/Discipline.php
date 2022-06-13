@@ -16,7 +16,7 @@ class Discipline extends Model
     protected $minimalDistanceToReach = 0;
     protected $distanceFactorizer = 0;
     protected $hasElevation = false;
-    protected $minimalElevationToReach = 200;
+    protected $minimalElevationToReach = 0;
     protected $hasRepetition = false;
     protected $minimalRepetitionToReach = 0;
     protected $repetitionToDistanceConversionBase = 0;
