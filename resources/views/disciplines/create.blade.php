@@ -30,6 +30,9 @@
                 <div class="p-6">
                     @include('disciplines.add-rowing')
                 </div>
+                <div class="p-6">
+                    @include('disciplines.add-handstandwalk')
+                </div>
             </div>
         </div>
     </div>
