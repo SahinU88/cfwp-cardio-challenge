@@ -21,3 +21,11 @@
     </div>
 </div>
 @endif
+
+@if (session('rowing'))
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-notification :type="'rowing'" :distance="session('rowing')->distance" :points="session('rowing')->points" />
+    </div>
+</div>
+@endif

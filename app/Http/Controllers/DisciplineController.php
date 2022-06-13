@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Discipline\Rowing;
 use App\Models\Discipline\SkiErg;
 use App\Models\Discipline\Swimming;
 use App\Models\Discipline\Walking;
@@ -38,7 +39,7 @@ class DisciplineController extends Controller
                 'burpees',
                 'handStandWalk',
                 'doubleUnders',
-                'rowing',
+                Rowing::class,
                 SkiErg::class,
                 Swimming::class,
                 Walking::class,

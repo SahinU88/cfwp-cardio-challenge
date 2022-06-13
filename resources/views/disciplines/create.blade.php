@@ -27,6 +27,9 @@
                 <div class="p-6">
                     @include('disciplines.add-skierg')
                 </div>
+                <div class="p-6">
+                    @include('disciplines.add-rowing')
+                </div>
             </div>
         </div>
     </div>
