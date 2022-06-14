@@ -26,6 +26,7 @@
                                         @foreach ($teams as $team)
                                         <tr class="border-t border-gray-200">
                                             <th scope="colgroup" class="bg-gray-50 px-4 py-2 text-left text-sm font-semibold text-gray-900 sm:px-6">{{ $team->name }}</th>
+                                            <th scope="colgroup" class="bg-gray-50 px-4 py-2 text-right text-sm font-semibold text-gray-900 sm:px-6">{{ $team->users->count() }} Members</th>
                                         </tr>
                                             @foreach ($team->users as $user)
                                             <tr class="border-t border-gray-300">
