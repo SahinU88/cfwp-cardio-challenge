@@ -26,7 +26,9 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <div class="text-cfwp-purple-accent">{{ Auth::user()->team->name }}</div>
+                        @if (Auth::user()->team)
+                            <div class="text-cfwp-purple-accent">{{ Auth::user()->team->name }}</div>
+                        @endif
                         <div class="ml-3 relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
                             <div>
                                 <button @click="open = ! open" type="button" class="w-10 h-10 bg-gray-800 text-gray-300 rounded-full flex items-center justify-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -107,7 +109,9 @@
             <div class="flex items-center px-5">
                 <div class="">
                     <div class="text-base font-medium leading-none text-white">{{ Auth::user()->name }}</div>
-                    <div class="mt-1 text-base font-medium leading-none text-white">{{ Auth::user()->team->name }}</div>
+                    @if (Auth::user()->team)
+                        <div class="mt-1 text-base font-medium leading-none text-white">{{ Auth::user()->team->name }}</div>
+                    @endif
                     <div class="mt-1 text-sm font-medium leading-none text-gray-400">{{ Auth::user()->email }}</div>
                 </div>
             </div>
