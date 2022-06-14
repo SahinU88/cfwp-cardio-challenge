@@ -19,18 +19,21 @@ class Team extends Model
     public function getTotal()
     {
         return $this->users
-            ->map(function($user){
-                return $user->getTotalDistanceFactorizedAttribute();
-            })
+            ->map(fn($user) => $user->getTotalPoints())
             ->sum();
     }
 
     public function getTotalCurrentWeek()
     {
         return $this->users
-            ->map(function($user){
-                return $user->getCurrentWeekDistanceFactorizedAttribute();
-            })
+            ->map(fn($user) => $user->getTotalForCurrentWeek())
+            ->sum();
+    }
+
+    public function getTotalUntilLastWeek()
+    {
+        return $this->users
+            ->map(fn($user) => $user->getTotalUntilLastWeek())
             ->sum();
     }
 }

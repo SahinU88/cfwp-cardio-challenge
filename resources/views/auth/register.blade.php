@@ -4,9 +4,9 @@
             <div class="mx-auto w-full max-w-sm lg:w-96">
                 <div>
                     <img class="h-24 w-auto" src="{{ asset('/images/cfwp-black.png') }}" alt="CrossFit Westpack Cardio Challenge">
-                    <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Jetzt registrieren</h2>
+                    <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Register now</h2>
                     <p class="mt-2 text-sm text-gray-600">
-                        Die Cardio-Challenge ist zurück!
+                        The challenge you are looking for is back!
                     </p>
                 </div>
 
@@ -58,6 +58,14 @@
                                 <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+
+                            <div class="flex items-center justify-center mt-8">
+                                @if (Route::has('login'))
+                                    <a class="italic underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                                        {{ __('Already registered? Login here') }}
+                                    </a>
+                                @endif
                             </div>
                         </form>
                     </div>

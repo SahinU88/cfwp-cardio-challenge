@@ -53,14 +53,14 @@ class User extends Authenticatable
         return $this->hasMany(Discipline::class);
     }
 
-    public function getTotalDistanceFactorizedAttribute()
+    public function getTotalPoints()
     {
         $sum = $this->disciplines->sum('points');
 
         return $sum / 1000;
     }
 
-    public function getCurrentWeekDistanceFactorizedAttribute()
+    public function getTotalForCurrentWeek()
     {
         $sum = $this->disciplines
             ->whereBetween(
@@ -68,6 +68,21 @@ class User extends Authenticatable
                 [
                     Carbon::now()->startOfWeek(),
                     Carbon::now()->endOfWeek()
+                ]
+            )
+            ->sum('points');
+
+        return $sum / 1000;
+    }
+
+    public function getTotalUntilLastWeek()
+    {
+        $sum = $this->disciplines
+            ->whereBetween(
+                'created_at',
+                [
+                    Carbon::now()->subYears(1)->startOfWeek(),
+                    Carbon::now()->subWeeks(1)->endOfWeek()
                 ]
             )
             ->sum('points');

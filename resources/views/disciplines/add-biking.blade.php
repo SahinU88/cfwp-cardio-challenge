@@ -15,7 +15,7 @@
             <form action="{{ route('disciplines.store', 'biking') }}" method="POST">
                 @csrf
                 <div class="shadow sm:rounded-md sm:overflow-hidden">
-                    <div class="px-4 py-5 bg-white sm:p-6">
+                    <div class="px-4 py-5 bg-gray-100 sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="distance" class="block text-sm font-medium leading-5 text-gray-700">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-4 py-3 bg-white text-right sm:px-6">
+                    <div class="px-4 py-3 bg-gray-100 text-right sm:px-6">
                         <span class="inline-flex rounded-md shadow-sm">
                             <x-button>Add entry</x-button>
                         </span>
