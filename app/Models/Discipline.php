@@ -57,6 +57,10 @@ class Discipline extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getPointsFormatted(){
+        return number_format($this->points / 1000, 2, ',', '.');
+    }
+
     public function calculatePoints() {
         return $this->distance * $this->distanceFactorizer;
     }
