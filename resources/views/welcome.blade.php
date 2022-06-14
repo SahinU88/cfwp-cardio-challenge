@@ -20,7 +20,7 @@
         <div class="min-h-full pt-16 pb-12 flex flex-col bg-cfwp-purple">
             <main class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex-shrink-0 flex justify-center">
-                    <x-application-logo class="h-12 w-auto" />
+                    <x-application-logo class="h-12 w-auto" :color="'black'" />
                 </div>
                 <div class="py-16">
                     <div class="text-center">
