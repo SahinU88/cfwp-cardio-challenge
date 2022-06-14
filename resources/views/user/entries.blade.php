@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Dashboard') }}
+        {{ __('Your entries') }}
     </x-slot>
 
     @include('shared.dashboard-notifications')

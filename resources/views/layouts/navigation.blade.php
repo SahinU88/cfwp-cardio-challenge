@@ -17,6 +17,10 @@
                             <x-cfwp-navigation-link :href="route('disciplines.create')" :active="request()->routeIs('disciplines.create')">
                                 {{ __('Log entry') }}
                             </x-cfwp-navigation-link>
+
+                            <x-cfwp-navigation-link :href="route('teams.overview')" :active="request()->routeIs('teams.overview')">
+                                {{ __('Teams') }}
+                            </x-cfwp-navigation-link>
                         </div>
                     </div>
                 </div>
@@ -93,6 +97,10 @@
 
             <x-cfwp-navigation-link-mobile :href="route('disciplines.create')" :active="request()->routeIs('disciplines.create')">
                 {{ __('Add entry') }}
+            </x-cfwp-navigation-link-mobile>
+
+            <x-cfwp-navigation-link-mobile :href="route('teams.overview')" :active="request()->routeIs('teams.overview')">
+                {{ __('Teams') }}
             </x-cfwp-navigation-link-mobile>
         </div>
         <div class="pt-4 pb-3 border-t border-gray-700">
