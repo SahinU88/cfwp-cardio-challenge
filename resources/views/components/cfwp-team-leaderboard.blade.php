@@ -1,7 +1,7 @@
 <div>
     <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
-            <h1 class="text-xl font-semibold text-gray-900">Leaderboard</h1>
+            <h2 class="text-xl font-semibold text-gray-900">Leaderboard</h2>
             <p class="mt-2 text-sm text-gray-700">Current standings. The current week will be applied <span class="font-bold">on Sunday 12am</span>.</p>
         </div>
         <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">

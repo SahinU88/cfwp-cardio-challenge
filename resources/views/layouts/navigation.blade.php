@@ -47,8 +47,7 @@
                                 style="display: none;"
                                 @click="open = false"
                             >
-                                {{-- <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
-                                    tabindex="-1" id="user-menu-item-0">Your Profile</a> --}}
+                                <a href="{{ route('user.entries') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Entries</a>
 
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">

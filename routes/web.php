@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard');
 
+    Route::get('/my-entries', fn() => view('user.entries'))->name('user.entries');
     Route::get('/add-entry', fn() => view('disciplines.create'))->name('disciplines.create');
     Route::post('/disciplines/{type}', [DisciplineController::class, 'store'])->name('disciplines.store');
 });
