@@ -5,7 +5,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <a href="{{ route('dashboard') }}">
-                            <x-application-logo class="block h-12 w-auto" :color="'white'" />
+                            <x-application-logo class="block h-12 w-auto" color="white" />
                         </a>
                     </div>
                     <div class="hidden md:block">
@@ -112,6 +112,8 @@
                 </div>
             </div>
             <div class="mt-3 px-2 space-y-1">
+                <a href="{{ route('user.entries') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Your Entries</a>
+
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
