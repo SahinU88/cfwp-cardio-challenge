@@ -17,7 +17,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
 
-    <body class="h-full font-sans antialiased">
+    <body x-data class="h-full font-sans antialiased">
         <div class="min-h-full">
             <div class="bg-gray-800 pb-32">
                 @include('layouts.navigation')
@@ -39,5 +39,32 @@
                 </div>
             </main>
         </div>
+
+        <x-cfwp-team-members-slide-over :teams="$options['teams']" />
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.store('teamsPanel', {
+                    open: false,
+                    activeTeamIndex: 0,
+
+                    openPanel() {
+                        this.open = true
+                    },
+
+                    closePanel() {
+                        this.open = false
+                    },
+
+                    showTeam(index) {
+                        this.activeTeamIndex = index;
+
+                        if (! this.open) {
+                            this.openPanel();
+                        }
+                    },
+                })
+            })
+        </script>
     </body>
 </html>
