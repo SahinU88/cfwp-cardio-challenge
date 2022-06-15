@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :options="['teams' => $teams]">
     <x-slot name="header">
         Log your entry
     </x-slot>

@@ -29,7 +29,11 @@ Route::middleware(['auth'])->group(function(){
             'teams' => Team::all(),
         ]);
     })->name('user.entries');
-    Route::get('/add-entry', fn() => view('disciplines.create'))->name('disciplines.create');
+    Route::get('/add-entry', function(){
+        return view('disciplines.create')->with([
+            'teams' => Team::all(),
+        ]);
+    })->name('disciplines.create');
 
     Route::post('/disciplines/{type}', [DisciplineController::class, 'store'])->name('disciplines.store');
 });
