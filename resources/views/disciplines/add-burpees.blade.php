@@ -4,7 +4,6 @@
             <div class="px-4 sm:px-0">
                 <h3 class="text-lg font-medium leading-6 text-gray-900">Burpees</h3>
                 <ul class="list-disc mt-1 ml-4 text-sm leading-5 text-gray-600 italic">
-                    <li>Minimum repetition for a single session: 300reps</li>
                     <li>Conversion: 150reps = 1km</li>
                 </ul>
             </div>
@@ -24,9 +23,9 @@
                                         id="repetition"
                                         name="repetition"
                                         type="number"
-                                        min="300"
+                                        min="0"
                                         step="1"
-                                        placeholder="300"
+                                        placeholder="100"
                                         required
                                         class="form-input block w-full pl-4 pr-12 sm:text-sm sm:leading-5"
                                     />

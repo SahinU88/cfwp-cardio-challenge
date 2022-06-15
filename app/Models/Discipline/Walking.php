@@ -25,7 +25,7 @@ class Walking extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasDistance = true;
-        $this->minimalDistanceToReach = 4;
+        $this->minimalDistanceToReach = 0;
         $this->distanceFactorizer = 1;
         $this->hasElevation = true;
         $this->minimalElevationToReach = 200;

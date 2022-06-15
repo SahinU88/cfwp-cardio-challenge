@@ -4,7 +4,6 @@
             <div class="px-4 sm:px-0">
                 <h3 class="text-lg font-medium leading-6 text-gray-900">Rowing</h3>
                 <ul class="list-disc mt-1 ml-4 text-sm leading-5 text-gray-600 italic">
-                    <li>Minimum distance for a single session: 5km</li>
                     <li>Multiplying factor: 0.8x</li>
                 </ul>
             </div>
@@ -24,7 +23,7 @@
                                         id="distance"
                                         name="distance"
                                         type="number"
-                                        min="5"
+                                        min="0"
                                         step="0.01"
                                         placeholder="5"
                                         required

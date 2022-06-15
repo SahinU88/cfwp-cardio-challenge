@@ -57,7 +57,7 @@
                                     <div class="-m-1 block flex-1 p-1">
                                         <div class="absolute inset-0"></div>
                                         <div class="relative flex min-w-0 flex-1 items-center">
-                                            <span class="relative inline-block flex-shrink-0">
+                                            <span class="relative inline-block flex-shrink-0 w-4">
                                                 <div>{{ substr($user->name, 0, 1) }}</div>
                                             </span>
                                             <div class="ml-4 truncate">

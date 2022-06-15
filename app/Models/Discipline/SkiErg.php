@@ -25,8 +25,8 @@ class SkiErg extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasDistance = true;
+        $this->minimalDistanceToReach = 0;
         $this->distanceFactorizer = 1.2;
-        $this->minimalDistanceToReach = 3;
 
         parent::__construct($attributes);
     }
