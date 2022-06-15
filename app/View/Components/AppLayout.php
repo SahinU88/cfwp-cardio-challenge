@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Team;
 use Illuminate\View\Component;
 
 class AppLayout extends Component
@@ -11,6 +12,8 @@ class AppLayout extends Component
     public function __construct($options = [])
     {
         $this->options = $options;
+
+        $this->initialise();
     }
 
     /**
@@ -21,5 +24,12 @@ class AppLayout extends Component
     public function render()
     {
         return view('layouts.app');
+    }
+
+    private function initialise()
+    {
+        if (! isset($this->options['teams'])) {
+            $this->options['teams'] = Team::all();
+        }
     }
 }
