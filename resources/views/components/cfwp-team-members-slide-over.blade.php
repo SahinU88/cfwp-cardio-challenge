@@ -3,7 +3,7 @@
 
     <div class="fixed inset-0 overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
-            <div class="fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
+            <div class="fixed inset-y-0 right-0 flex max-w-full sm:pl-16">
                 <div class="pointer-events-auto w-screen max-w-xl"
                     x-show="$store.teamsPanel.open"
                     x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -33,14 +33,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="border-b border-gray-200">
+                        <div class="border-b border-gray-200 overflow-x-auto hiddenScrollbar">
                             <div class="px-6">
                                 <nav class="-mb-px flex space-x-6">
-                                    <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
                                     @foreach ($teams as $team)
                                     <a
                                         href="#"
-                                        class="whitespace-nowrap pb-4 px-1 ml-2 border-b-2 font-medium text-sm"
+                                        class="whitespace-nowrap px-1 pb-4 ml-2 border-b-2 font-medium text-sm"
                                         :class="$store.teamsPanel.activeTeamIndex == {{ $loop->index }} ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'"
                                         @click="$store.teamsPanel.showTeam({{$loop->index}})"
                                     >

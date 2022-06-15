@@ -25,7 +25,7 @@
                         <tbody class="divide-y divide-gray-200 bg-white">
                             @foreach ($teams as $team)
                             <tr
-                                @class(['cursor-pointer', 'bg-cfwp-yellow' => Auth::user()->team->id == $team->id])
+                                @class(['cursor-pointer hover:bg-gray-50', 'bg-cfwp-yellow' => Auth::user()->team->id == $team->id])
                                 @click="$store.teamsPanel.showTeam({{ $loop->index }})"
                             >
                                 <td class="w-10 whitespace-nowrap py-4 pl-4 pr-1 text-center text-sm font-medium text-gray-900">{{ $loop->iteration }}</td>
