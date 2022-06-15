@@ -15,7 +15,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @include('user.discipline-stats')
+            <x-cfwp-user-stats />
         </div>
     </div>
 </x-app-layout>

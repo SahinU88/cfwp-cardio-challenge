@@ -1,4 +1,4 @@
-<x-app-layout :options="['teams' => $teams]">
+<x-app-layout>
     <x-slot name="header">
         {{ __('Your entries') }}
     </x-slot>
