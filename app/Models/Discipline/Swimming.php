@@ -25,7 +25,7 @@ class Swimming extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasDistance = true;
-        $this->minimalDistanceToReach = 0.8;
+        $this->minimalDistanceToReach = 0;
         $this->distanceFactorizer = 5;
 
         parent::__construct($attributes);

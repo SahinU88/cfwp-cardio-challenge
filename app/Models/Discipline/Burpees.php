@@ -25,7 +25,7 @@ class Burpees extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasRepetition = true;
-        $this->minimalRepetitionToReach = 300;
+        $this->minimalRepetitionToReach = 0;
         $this->repetitionToDistanceConversionBase = 150;
 
         parent::__construct($attributes);

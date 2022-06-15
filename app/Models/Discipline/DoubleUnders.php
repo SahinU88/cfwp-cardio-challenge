@@ -25,7 +25,7 @@ class DoubleUnders extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasRepetition = true;
-        $this->minimalRepetitionToReach = 500;
+        $this->minimalRepetitionToReach = 0;
         $this->repetitionToDistanceConversionBase = 250;
 
         parent::__construct($attributes);

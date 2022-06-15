@@ -25,7 +25,7 @@ class Biking extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasDistance = true;
-        $this->minimalDistanceToReach = 14;
+        $this->minimalDistanceToReach = 0;
         $this->distanceFactorizer = 0.3;
         $this->hasElevation = true;
         $this->minimalElevationToReach = 200;

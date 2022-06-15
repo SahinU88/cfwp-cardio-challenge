@@ -25,7 +25,7 @@ class HandstandWalk extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasDistance = true;
-        $this->minimalDistanceToReach = 0.2;
+        $this->minimalDistanceToReach = 0;
         $this->distanceFactorizer = 20;
 
         parent::__construct($attributes);

@@ -4,7 +4,6 @@
             <div class="px-4 sm:px-0">
                 <h3 class="text-lg font-medium leading-6 text-gray-900">Biking</h3>
                 <ul class="list-disc mt-1 ml-4 text-sm leading-5 text-gray-600 italic">
-                    <li>Minimum distance for a single session: 14km</li>
                     <li>Multiplying factor: 0.3x</li>
                     <li>Minimum elevation for a single session: 200hm</li>
                     <li>Multiplying factor: hm / 1000 + 1</li>
@@ -26,9 +25,9 @@
                                         id="distance"
                                         name="distance"
                                         type="number"
-                                        min="14"
+                                        min="0"
                                         step="0.01"
-                                        placeholder="14.00"
+                                        placeholder="10.00"
                                         required
                                         class="form-input block w-full pl-4 pr-12 sm:text-sm sm:leading-5"
                                     />
@@ -44,7 +43,7 @@
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="elevation" class="block text-sm font-medium leading-5 text-gray-700">
-                                    Elevation
+                                    Elevation (optional)
                                 </label>
                                 <div class="mt-1 relative rounded-md shadow-sm">
                                     <input

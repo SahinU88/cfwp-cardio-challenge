@@ -29,7 +29,7 @@ class AppLayout extends Component
     private function initialise()
     {
         if (! isset($this->options['teams'])) {
-            $this->options['teams'] = Team::all();
+            $this->options['teams'] = Team::all()->sortByDesc(fn($team) => $team->getTotalUntilLastWeek());
         }
     }
 }

@@ -25,7 +25,7 @@ class Rowing extends Discipline
     public function __construct($attributes = [])
     {
         $this->hasDistance = true;
-        $this->minimalDistanceToReach = 5;
+        $this->minimalDistanceToReach = 0;
         $this->distanceFactorizer = 0.8;
 
         parent::__construct($attributes);
