@@ -18,7 +18,7 @@
                                 {{ __('Log entry') }}
                             </x-cfwp-navigation-link>
 
-                            <x-cfwp-navigation-link :href="route('teams.overview')" :active="request()->routeIs('teams.overview')">
+                            <x-cfwp-navigation-link :href="'#'" @click="$store.teamsPanel.openPanel()">
                                 {{ __('Teams') }}
                             </x-cfwp-navigation-link>
                         </div>

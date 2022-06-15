@@ -1,5 +1,5 @@
 <div x-data x-show="$store.teamsPanel.open" class="relative z-10" @keydown.window.escape="$store.teamsPanel.closePanel()">
-    <div class="fixed inset-0"></div>
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
     <div class="fixed inset-0 overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
