@@ -19,4 +19,10 @@ mix.js('resources/js/app.js', 'public/js')
         require('autoprefixer'),
     ]);
 
+mix.copyDirectory('resources/favicon', 'public/favicon');
 mix.copyDirectory('resources/images', 'public/images');
+
+if (mix.inProduction()) {
+  mix
+   .version();
+}
