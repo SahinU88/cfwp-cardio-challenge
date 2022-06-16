@@ -595,6 +595,17 @@ select {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 .pointer-events-none {
   pointer-events: none;
 }
@@ -942,6 +953,11 @@ select {
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1237,6 +1253,9 @@ select {
 }
 .pr-4 {
   padding-right: 1rem;
+}
+.pr-10 {
+  padding-right: 2.5rem;
 }
 .text-left {
   text-align: left;
@@ -1694,6 +1713,10 @@ select {
 
   .sm\:ml-16 {
     margin-left: 4rem;
+  }
+
+  .sm\:block {
+    display: block;
   }
 
   .sm\:flex {

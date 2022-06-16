@@ -90,6 +90,13 @@ class User extends Authenticatable
         return $sum / 1000;
     }
 
+    public function getTotalAllTimeFor($type)
+    {
+        return $this->disciplines
+            ->where('name', '=', $type)
+            ->sum('points');
+    }
+
     public function getTotalWalkingForWeek()
     {
         return $this->getCurrentWeekTotalPointsForType('Walking');
