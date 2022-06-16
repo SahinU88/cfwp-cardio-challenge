@@ -30,6 +30,13 @@ class Team extends Model
             ->sum();
     }
 
+    public function getTotalCurrentWeekFor(string $type)
+    {
+        return $this->users
+            ->map(fn($user) => $user->getCurrentWeekTotalPointsForType($type))
+            ->sum();
+    }
+
     public function getTotalUntilLastWeek()
     {
         return $this->users

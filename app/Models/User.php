@@ -132,7 +132,7 @@ class User extends Authenticatable
 
     public function getCurrentWeekTotalPointsForType($type)
     {
-        $sum = $this->disciplines
+        return $this->disciplines
             ->where('name', '=', $type)
             ->whereBetween(
                 'created_at',
@@ -142,7 +142,5 @@ class User extends Authenticatable
                 ]
             )
             ->sum('points');
-
-        return number_format($sum / 1000, 2, ',', '.');
     }
 }

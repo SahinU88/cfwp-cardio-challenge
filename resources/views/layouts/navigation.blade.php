@@ -14,6 +14,10 @@
                                 {{ __('Dashboard') }}
                             </x-cfwp-navigation-link>
 
+                            <x-cfwp-navigation-link :href="route('user.team')" :active="request()->routeIs('user.team')">
+                                {{ __('My Team') }}
+                            </x-cfwp-navigation-link>
+
                             <x-cfwp-navigation-link :href="route('disciplines.create')" :active="request()->routeIs('disciplines.create')">
                                 {{ __('Log entry') }}
                             </x-cfwp-navigation-link>
@@ -23,7 +27,7 @@
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         @if (Auth::user()->team)
-                            <div class="text-cfwp-purple-accent">{{ Auth::user()->team->name }}</div>
+                            <div class="text-cfwp-yellow">{{ Auth::user()->team->name }}</div>
                         @endif
                         <div class="ml-3 relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
                             <div>
@@ -91,6 +95,10 @@
         <div class="px-2 py-3 space-y-1 sm:px-3">
             <x-cfwp-navigation-link-mobile :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-cfwp-navigation-link-mobile>
+
+            <x-cfwp-navigation-link-mobile :href="route('user.team')" :active="request()->routeIs('user.team')">
+                {{ __('My Team') }}
             </x-cfwp-navigation-link-mobile>
 
             <x-cfwp-navigation-link-mobile :href="route('disciplines.create')" :active="request()->routeIs('disciplines.create')">
