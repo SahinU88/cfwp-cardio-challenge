@@ -35,18 +35,17 @@
                         </div>
                         <div class="border-b border-gray-200 overflow-x-auto hiddenScrollbar">
                             <div class="px-6">
-                                <nav class="-mb-px flex space-x-6">
+                                <div class="-mb-px flex space-x-6">
                                     @foreach ($teams as $team)
-                                    <a
-                                        href="#"
-                                        class="whitespace-nowrap px-1 pb-4 ml-2 border-b-2 font-medium text-sm"
+                                    <div
+                                        class="cursor-pointer whitespace-nowrap px-1 pb-4 ml-2 border-b-2 font-medium text-sm"
                                         :class="$store.teamsPanel.activeTeamIndex == {{ $loop->index }} ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'"
                                         @click="$store.teamsPanel.showTeam({{$loop->index}})"
                                     >
                                         {{ $team->name }}
-                                    </a>
+                                    </div>
                                     @endforeach
-                                </nav>
+                                </div>
                             </div>
                         </div>
                         @foreach ($teams as $team)
