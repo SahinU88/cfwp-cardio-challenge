@@ -1,3 +1,3 @@
 # CF Westpack - Kilometer Challenge
 
-- Version `v1.0.8`
+- Version `v1.1.0`
