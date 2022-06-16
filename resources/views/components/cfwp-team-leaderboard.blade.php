@@ -25,12 +25,15 @@
                         <tbody class="divide-y divide-gray-200 bg-white">
                             @foreach ($teams as $team)
                             <tr
-                                @class(['cursor-pointer hover:bg-gray-50', 'bg-cfwp-yellow' => Auth::user()->team->id == $team->id])
+                                @class([
+                                    'cursor-pointer text-gray-900 hover:bg-gray-50' => Auth::user()->team->id != $team->id,
+                                    'cursor-pointer bg-gray-800 text-cfwp-yellow' => Auth::user()->team->id == $team->id
+                                ])
                                 @click="$store.teamsPanel.showTeam({{ $loop->index }})"
                             >
-                                <td class="w-10 whitespace-nowrap py-4 pl-4 pr-1 text-center text-sm font-medium text-gray-900">{{ $loop->iteration }}</td>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $team->name }}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($team->getTotalUntilLastWeek(), 2, ',', '.') }}</td>
+                                <td class="w-10 whitespace-nowrap py-4 pl-4 pr-1 text-center text-sm font-medium">{{ $loop->iteration }}</td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-6">{{ $team->name }}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm">{{ number_format($team->getTotalUntilLastWeek(), 2, ',', '.') }}</td>
                             </tr>
                             @endforeach
                         </tbody>
