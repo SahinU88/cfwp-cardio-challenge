@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->hasMany(Discipline::class);
     }
 
+    public function challenges()
+    {
+        return $this->belongsToMany(Challenge::class);
+    }
+
     public function getTotalPoints()
     {
         $sum = $this->disciplines->sum('points');
