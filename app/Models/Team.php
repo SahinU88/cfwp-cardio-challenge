@@ -46,8 +46,15 @@ class Team extends Model
 
     public function getTotalUntilLastWeek()
     {
-        return $this->users
+        $challengePoints = Challenge::passed()
+            ->get()
+            ->map(fn($c) => $c->getChallengeBoostFor($this))
+            ->sum();
+
+        $disciplinePoints = $this->users
             ->map(fn($user) => $user->getTotalUntilLastWeek())
             ->sum();
+
+        return $disciplinePoints * (1 + $challengePoints);
     }
 }
