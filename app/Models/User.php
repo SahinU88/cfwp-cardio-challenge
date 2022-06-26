@@ -85,6 +85,21 @@ class User extends Authenticatable
         return $sum / 1000;
     }
 
+    public function getTotalForWeek($started_at, $ended_at)
+    {
+        $sum = $this->disciplines
+            ->whereBetween(
+                'created_at',
+                [
+                    $started_at,
+                    $ended_at
+                ]
+            )
+            ->sum('points');
+
+        return $sum / 1000;
+    }
+
     public function getTotalUntilLastWeek()
     {
         $sum = $this->disciplines

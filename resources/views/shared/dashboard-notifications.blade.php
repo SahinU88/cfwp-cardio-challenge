@@ -11,7 +11,7 @@
             </div>
             <div class="ml-3">
                 @if (session('challengeCompleted') == true)
-                    <p class="text-sm font-medium text-green-800">Weekly challenge completed! Great, depending on how many teammates complete the challenge your will get some extra points! 💪</p>
+                    <p class="text-sm font-medium text-green-800">Weekly challenge completed! Great, depending on how many teammates complete the challenge your team will get some extra points! 💪</p>
                 @else
                     <p class="text-sm font-medium text-green-800">Weekly challenge updated.</p>
                 @endif
