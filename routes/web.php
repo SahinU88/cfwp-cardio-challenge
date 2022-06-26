@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DisciplineController;
 use App\Models\Team;
@@ -27,6 +28,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/add-entry', fn() => view('disciplines.create'))->name('disciplines.create');
     Route::get('/my-entries', fn() => view('user.entries'))->name('user.entries');
     Route::get('/my-team', fn() => view('user.team'))->name('user.team');
+    Route::get('/challenges-test/{id}', [ChallengeController::class, 'store'])->name('challenges.store');
 
     Route::post('/disciplines/{type}', [DisciplineController::class, 'store'])->name('disciplines.store');
+    Route::post('/challenges/{challenge}', [ChallengeController::class, 'store'])->name('challenges.store');
 });

@@ -32,7 +32,7 @@
                                 <td class="whitespace-nowrap px-3 py-4 text-left text-sm text-gray-900">{{ $entry->name }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($entry->distance/1000, 2, ',', '.') }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($entry->elevation/1000, 2, ',', '.') }}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($entry->repetition/1000, 2, ',', '.') }}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($entry->repetition, 0, ',', '.') }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($entry->points/1000, 2, ',', '.') }}</td>
                             </tr>
                             @endforeach
