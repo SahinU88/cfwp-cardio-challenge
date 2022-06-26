@@ -55,7 +55,12 @@ class User extends Authenticatable
 
     public function challenges()
     {
-        return $this->belongsToMany(Challenge::class);
+        return $this->belongsToMany(Challenge::class)->withTimestamps();
+    }
+
+    public function didCompleteChallenge($challenge)
+    {
+        return $this->challenges->contains($challenge);
     }
 
     public function getTotalPoints()
