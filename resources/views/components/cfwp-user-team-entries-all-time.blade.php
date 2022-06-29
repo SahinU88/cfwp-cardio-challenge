@@ -50,7 +50,7 @@
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('Swimming')/ 1000, 2, ',', '.') }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('SkiErg')/ 1000, 2, ',', '.') }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('Rowing')/ 1000, 2, ',', '.') }}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('HandstandWalk')/ 1000, 2, ',', '.') }}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('HandStandWalk')/ 1000, 2, ',', '.') }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('DoubleUnders')/ 1000, 2, ',', '.') }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm text-gray-900">{{ number_format($member->getTotalAllTimeFor('Burpees')/ 1000, 2, ',', '.') }}</td>
                             </tr>
