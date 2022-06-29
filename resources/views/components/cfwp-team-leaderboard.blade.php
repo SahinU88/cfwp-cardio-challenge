@@ -19,7 +19,8 @@
                             <tr>
                                 <th class="w-10 py-3.5 pl-4 pr-1"></th>
                                 <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Team</th>
-                                <th class="px-3 py-3.5 text-right text-sm font-semibold text-gray-900">Total kilometers</th>
+                                {{-- <th class="px-3 py-3.5 text-right text-sm font-semibold text-gray-900 w-40">WC: Burpees</th> --}}
+                                <th class="px-3 py-3.5 text-right text-sm font-semibold text-gray-900 w-40">Total Points</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
@@ -33,6 +34,7 @@
                             >
                                 <td class="w-10 whitespace-nowrap py-4 pl-4 pr-1 text-center text-sm font-medium">{{ $loop->iteration }}</td>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-6">{{ $team->name }}</td>
+                                {{-- <td class="whitespace-nowrap px-3 py-4 text-right text-sm">+{{ number_format($team->getPointsForChallenge(1), 2, ',', '.') }}</td> --}}
                                 <td class="whitespace-nowrap px-3 py-4 text-right text-sm">{{ number_format($team->getTotalUntilLastWeek(), 2, ',', '.') }}</td>
                             </tr>
                             @endforeach

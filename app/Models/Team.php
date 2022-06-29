@@ -55,6 +55,17 @@ class Team extends Model
         return $disciplinePoints + $challengePoints;
     }
 
+    public function getPointsForChallenge(int $challengeId)
+    {
+        $challenge = Challenge::find($challengeId);
+        $boost = $challenge->getChallengeBoostFor($this);
+        $pointsForWeek = $this->users
+                    ->map(fn($user) => $user->getTotalForWeek($challenge->started_at, $challenge->ended_at))
+                    ->sum();
+
+        return $pointsForWeek * $boost;
+    }
+
     private function calculateChallengePoints()
     {
         $challengePoints = Challenge::passed()
