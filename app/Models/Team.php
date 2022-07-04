@@ -18,16 +18,31 @@ class Team extends Model
 
     public function getTotal()
     {
-        return $this->users
+        $total = $this->users
             ->map(fn($user) => $user->getTotalPoints())
             ->sum();
+
+        return $total / $this->users->count();
     }
 
     public function getTotalCurrentWeek()
     {
-        return $this->users
+        $total = $this->users
             ->map(fn($user) => $user->getTotalForCurrentWeek())
             ->sum();
+
+        return $total / $this->users->count();
+    }
+
+    public function getTotalUntilLastWeek()
+    {
+        $challengePoints = $this->calculateChallengePoints();
+
+        $disciplinePoints = $this->users
+            ->map(fn($user) => $user->getTotalUntilLastWeek())
+            ->sum();
+
+        return ($disciplinePoints + $challengePoints) / $this->users->count();
     }
 
     public function getTotalAllTimeFor(string $type)
@@ -42,17 +57,6 @@ class Team extends Model
         return $this->users
             ->map(fn($user) => $user->getCurrentWeekTotalPointsForType($type))
             ->sum();
-    }
-
-    public function getTotalUntilLastWeek()
-    {
-        $challengePoints = $this->calculateChallengePoints();
-
-        $disciplinePoints = $this->users
-            ->map(fn($user) => $user->getTotalUntilLastWeek())
-            ->sum();
-
-        return $disciplinePoints + $challengePoints;
     }
 
     public function getPointsForChallenge(int $challengeId)
