@@ -11,7 +11,10 @@ class DashboardController extends Controller
     {
         return view('dashboard')->with([
             'teams' => Team::all()->sortByDesc(fn($team) => $team->getTotalUntilLastWeek()),
-            'weeklyChallenge' => Challenge::all()->first(fn($c) => $c->isActive()),
+            'weeklyChallenge' => [
+                'burpeeMile' => Challenge::find(4),
+                'rowMarathon' => Challenge::find(5),
+            ],
         ]);
     }
 }
